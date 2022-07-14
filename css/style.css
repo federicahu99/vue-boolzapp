@@ -175,8 +175,8 @@ img {
 ._message {
     padding: 5px 10px;
     border-radius: 5px;
-    max-width: 100px;
-    margin: 10px 20px;
+    max-width: 350px;
+    margin: 5px 20px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
