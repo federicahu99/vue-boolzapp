@@ -25,9 +25,13 @@ img {
 /* User top-left section*/
 
 #_user-name-option {
-    height: 50px;
+    height: 60px;
     padding: 10px;
     background-color: white;
+}
+
+#_nome-user {
+    font-size: 19px;
 }
 
 #_user-name img {
@@ -36,11 +40,34 @@ img {
 }
 
 #_user-option .bi {
-    margin-right: 15px;
+    margin-right: 10px;
     color:#c9c3bd; 
     font-weight: bolder;
+    line-height: 240%
 }
 
+/* Notifiche */
+
+#_turn-notifications {
+    height: 60px;
+    padding: 10px;
+    background-color: #8edafc;
+}
+
+#_turn-notifications .bi {
+    background-color:white;
+    color: #8edafc;
+    border-radius: 50%;
+    padding: 5px 10px
+}
+
+#_turn-notifications a {
+    color:gray
+}
+
+#_turn-on {
+    margin-left: 10px;
+}
 
 
 
