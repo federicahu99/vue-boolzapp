@@ -46,7 +46,7 @@ img {
     line-height: 240%
 }
 
-/* Notifiche */
+/* Notifications */
 
 #_turn-notifications {
     height: 60px;
@@ -69,5 +69,37 @@ img {
     margin-left: 10px;
 }
 
+/* search section */
+
+#_search-container {
+    padding: 5px;
+    background-color: #c9c3bd;
+}
+
+/* chat */
+
+#_chat-container {
+    min-height: 100%;
+    background-color: white;
+}
+
+/* contact */
+
+#_chat-container {
+    height: 231px;
+    overflow-y: scroll;
+}
+
+._contact {
+    height: 50px;
+    line-height: 270%;
+    padding-left: 10px;
+    border-top: 0.5px solid #c9c3bd;
+}
+
+._contact img {
+    border-radius: 50%;
+    padding: 5px;
+}
 
 
