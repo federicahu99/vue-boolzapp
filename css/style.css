@@ -32,7 +32,7 @@ img {
 #_user-name-option {
     height: 80px;
     padding: 10px;
-    background-color: white;
+    background-color: #eaeaea;
 }
 
 #_nome-user {
@@ -46,7 +46,7 @@ img {
 
 #_user-option .bi {
     margin-right: 10px;
-    color:#c9c3bd; 
+    color:grey; 
     font-weight: bolder;
     line-height: 380%
 }
@@ -78,7 +78,7 @@ img {
 
 #_search-container {
     padding: 5px;
-    background-color: #c9c3bd;
+    background-color: #eaeaea;
 }
 
 /* chat */
@@ -109,6 +109,38 @@ img {
     background-color: white;
     height: 87vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     border-left: 2px solid #009688;
 }
 
+/* chat header */
+
+#_chat-header {
+    height: 80px;
+    background-color: #eaeaea;
+    padding: 10px;
+}
+
+#_header-icon img{
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
+#_receiver-name {
+    margin-left: 15px;
+    font-size: 22px;
+}
+
+#_chat-option .bi{
+    margin-right: 18px;
+}
+
+/* conversation */
+
+#_conversation {
+    height: 60vh;
+    background-image: url(../img/mine.jpg);
+}
+
+/* user input section*/
