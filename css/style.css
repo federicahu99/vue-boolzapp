@@ -108,8 +108,6 @@ img {
 #_chat-container {
     background-color: white;
     height: 87vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
     border-left: 2px solid #009688;
 }
 
@@ -134,13 +132,36 @@ img {
 
 #_chat-option .bi{
     margin-right: 18px;
+    color:dimgray;
+    font-size: 20px;
 }
 
 /* conversation */
 
 #_conversation {
-    height: 60vh;
+    height: calc(87vh - 60px - 80px);
     background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* user input section*/
+
+#_user-input {
+    height: 60px;
+    background-color: #eaeaea;
+    padding: 10px
+}
+
+#_user-input .bi {
+    padding: 7px 15px;
+    font-size: 25px;
+}
+
+#_user-input a {
+    color:dimgray;
+}
+
+#_new-message {
+    border-radius: 8px;
+}
