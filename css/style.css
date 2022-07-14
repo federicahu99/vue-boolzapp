@@ -165,3 +165,27 @@ img {
 #_new-message {
     border-radius: 8px;
 }
+
+/* messages */
+
+#_conversation {
+
+}
+
+._message {
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 100px;
+    margin: 10px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+._user-message {
+    background-color: lightgreen;
+}
+
+._receiver-message {
+    background-color: white;
+}
