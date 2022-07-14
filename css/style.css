@@ -1,6 +1,46 @@
+/* General */
+img {
+    height: 100%;
+}
+
 /* bg */
 
 #_bg {
     height: 100vh;
-    background-image: linear-gradient( #009688 0%,#009688 20%, #dadbd4 20%, #dadbd4 100%);
+    width: 100vw;
+    background-image: linear-gradient( #009688 0%,#009688 18%, #dadbd4 18%, #dadbd4 100%);
 }
+
+/* Body */
+
+#_container {
+    width: 80vw;
+    height: 87vh;
+    background-color: dodgerblue;
+    /* background-color: #e0d9d1; */
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* User top-left section*/
+
+#_user-name-option {
+    height: 50px;
+    padding: 10px;
+    background-color: white;
+}
+
+#_user-name img {
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+#_user-option .bi {
+    margin-right: 15px;
+    color:#c9c3bd; 
+    font-weight: bolder;
+}
+
+
+
+
