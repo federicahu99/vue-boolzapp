@@ -1,0 +1,6 @@
+/* bg */
+
+#_bg {
+    height: 100vh;
+    background-image: linear-gradient( #009688 0%,#009688 20%, #dadbd4 20%, #dadbd4 100%);
+}
