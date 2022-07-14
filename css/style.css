@@ -3,6 +3,11 @@ img {
     height: 100%;
 }
 
+.row > * {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* bg */
 
 #_bg {
@@ -25,7 +30,7 @@ img {
 /* User top-left section*/
 
 #_user-name-option {
-    height: 60px;
+    height: 80px;
     padding: 10px;
     background-color: white;
 }
@@ -43,7 +48,7 @@ img {
     margin-right: 10px;
     color:#c9c3bd; 
     font-weight: bolder;
-    line-height: 240%
+    line-height: 380%
 }
 
 /* Notifications */
@@ -78,23 +83,19 @@ img {
 
 /* chat */
 
-#_chat-container {
-    min-height: 100%;
+#_conversation-container {
     background-color: white;
+    height: calc( 87vh - 187px );
+    overflow-y: scroll;
 }
 
 /* contact */
 
-#_chat-container {
-    height: 231px;
-    overflow-y: scroll;
-}
-
 ._contact {
-    height: 50px;
-    line-height: 270%;
-    padding-left: 10px;
-    border-top: 0.5px solid #c9c3bd;
+    height: 68px;
+    line-height: 350%;
+    padding: 5px;
+    border-bottom: 0.5px solid #c9c3bd;
 }
 
 ._contact img {
@@ -102,4 +103,12 @@ img {
     padding: 5px;
 }
 
+/* rigth section */
+
+#_chat-container {
+    background-color: white;
+    height: 87vh;
+    overflow-y: scroll;
+    border-left: 2px solid #009688;
+}
 
