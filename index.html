@@ -25,7 +25,7 @@
                
                 <div class="row">
                     <!-- left column -->
-                    <div class="col-5">
+                    <div class="col-5" id="root">
                         <!-- user section -->
                         <section id="_user-name-option"  class="d-flex justify-content-between">
                             <div id="_user-name"  class="d-flex align-items-center">
@@ -62,10 +62,11 @@
                         <section>
                             <div id="_conversation-container">
                                 <!-- single contact -->
-                                <div class="_contact d-flex">
-                                    <img src="img/avatar_1.jpg" alt="chat1">
-                                    <div class="_contact-name">Christian</div>    
-                                </div>
+                                <div class="_contact d-flex" v-for="(contact, i) in contacts"> 
+                                    <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" alt="">
+                                    <div class="_contact-name" 
+                                        v-text="contact.name"></div>    
+                                    </div>
                                 
                             </div>
                         </section>
@@ -81,7 +82,7 @@
                             <section id="_chat-header">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col" id="_header-icon">
-                                        <img src="img/avatar_1.jpg" alt="">
+                                        <img src="img/avatar_01.jpg" alt="">
                                         <span id="_receiver-name">Christian</span>
                                     </div>
                                     <div class="col d-flex justify-content-end" id="_chat-option">
@@ -98,20 +99,20 @@
 
                                     <!-- mine -->
                                     <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatibus sapiente minima molestias! Repellendus provident architecto laudantium officia, molestias suscipit cupiditate ducimus iusto veritatis natus voluptatibus, dolores quos mollitia facere? </div> 
+                                        <div class="_user-message _message"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, voluptatem? Ratione iure, impedit porro incidunt ad nobis velit magnam maxime eum reprehenderit amet in fugit mollitia aut optio eius ipsum.</div> 
                                     </div>
 
                                     <!-- theirs -->
                                     <div class="d-flex justify-content-start ps-2"> 
-                                    <div class="_receiver-message _message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium veniam molestias commodi error, quod esse dignissimos cupiditate et praesentium, dolorem, quidem ratione magnam atque accusamus autem. Facere blanditiis sit doloremque.</div>
+                                    <div class="_receiver-message _message">okay</div>
                                     </div>
 
                                     <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Ciao </div> 
+                                        <div class="_user-message _message"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam fugit, autem vero enim dolorem adipisci explicabo, ipsa minima sapiente totam facilis voluptate maiores perspiciatis iste tenetur quos rerum rem blanditiis. </div> 
                                     </div>
 
                                     <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Ciao </div> 
+                                        <div class="_user-message _message"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Non possimus cumque assumenda ex! Totam ullam hic assumenda ducimus ab quo harum, neque dolor, voluptatibus aliquid facilis earum, est itaque praesentium! </div> 
                                     </div>
 
                                 </div>
