@@ -96,13 +96,14 @@
                                 <!-- conversation section -->
                                 <section>
                                      <div id="_conversation"  
-                                     v-for="(message, i) in contacts.messages">
+                                     >
 
                                         <!-- message -->
-                                        <div class="d-flex" 
+                                        <div class="d-flex"
+                                        v-for="(message, i) in contacts[currentIndex].messages" 
                                         :class="message.status === 'sent' ? 'justify-content-end pe-2' : 'justify-content-start ps-2'"> 
                                             <div class="_message" 
-                                            :class="message.status === 'sent' ? '_user-message' :' _receiver_message'"> 
+                                            :class="message.status === 'sent' ? '_user-message' :' _receiver-message'"> 
                                                 <div v-text="message.text"></div>
                                                 <div class="_date" v-text="message.date"></div>
                                             </div> 

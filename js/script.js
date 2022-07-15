@@ -3,7 +3,7 @@ console.log('ok', Vue)
 const root = new Vue ({
     el: "#root",
     data : {
-      currentIndex: 0,
+      currentIndex: 2,
       user: {
         name: 'Nome Utente',
         avatar: '_io'
