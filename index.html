@@ -65,7 +65,7 @@
 
                                     <!-- single contact -->
                                     <div class="_contact d-flex" v-for="(contact, index) in contacts"> 
-                                        <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'photo'"> 
+                                        <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'photo'" @click="openChat(index)"> 
                                         <div class="_contact-name" v-text="contact.name"></div>    
                                     </div>
                                     

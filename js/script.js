@@ -3,7 +3,7 @@ console.log('ok', Vue)
 const root = new Vue ({
     el: "#root",
     data : {
-      currentIndex: 2,
+      currentIndex: 0,
       user: {
         name: 'Nome Utente',
         avatar: '_io'
@@ -92,7 +92,9 @@ const root = new Vue ({
         
 
     }, methods: {
-        
+      openChat(index) {
+        this.currentIndex = index;
+      }
        
     }
 })
