@@ -17,18 +17,16 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
-    <!-- dayjs -->
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
     <title>Boolzapp</title>
-    <div id="_bg">
-        <body id="_body" class="d-flex justify-content-center">
+    <body id="_bg">
+        <div id="_body" class="d-flex justify-content-center">
             <div id="_container">
                 <main>
                
-                    <div class="row">
+                    <div class="row" id="root">
                         <!-- left column -->
-                        <div class="col-5" id="root">
+                        <div class="col-5" >
                             <!-- user section -->
                             <section id="_user-name-option"  class="d-flex justify-content-between">
                                 <div id="_user-name"  class="d-flex align-items-center">
@@ -66,7 +64,7 @@
                                 <div id="_conversation-container">
 
                                     <!-- single contact -->
-                                    <div class="_contact d-flex" v-for="(contact, i) in contacts" @click="openChat(contact)"> 
+                                    <div class="_contact d-flex" v-for="(contact, index) in contacts"> 
                                         <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'photo'"> 
                                         <div class="_contact-name" v-text="contact.name"></div>    
                                     </div>
@@ -84,8 +82,8 @@
                                 <section id="_chat-header">
                                     <div class="row justify-content-between align-items-center">
                                         <div class="col" id="_header-icon">
-                                            <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" alt="">
-                                            <span id="_receiver-name" v-text="openChatWith.name"> </span>
+                                            <img v-bind:src="'img/avatar' +  +'.jpg'" alt="">
+                                            <span id="_receiver-name"> </span>
                                         </div>
                                         <div class="col d-flex justify-content-end" id="_chat-option">
                                             <a href="#"><i class="bi bi-search"></i></a>
@@ -97,22 +95,17 @@
 
                                 <!-- conversation section -->
                                 <section>
-                                    <div id="_conversation" v-for="(contact, i) in contacts">
+                                     <div id="_conversation"  
+                                     v-for="(message, i) in contacts.messages">
 
-                                        <!-- mine -->
-                                        <div class="d-flex justify-content-end pe-2"> 
-                                            <div class="_user-message _message"> 
-                                                <div v-text></div>
-                                                <div class="_date"></div>
+                                        <!-- message -->
+                                        <div class="d-flex" 
+                                        :class="message.status === 'sent' ? 'justify-content-end pe-2' : 'justify-content-start ps-2'"> 
+                                            <div class="_message" 
+                                            :class="message.status === 'sent' ? '_user-message' :' _receiver_message'"> 
+                                                <div v-text="message.text"></div>
+                                                <div class="_date" v-text="message.date"></div>
                                             </div> 
-                                        </div>
-
-                                        <!-- theirs -->
-                                        <div class="d-flex justify-content-start ps-2"> 
-                                            <div class="_receiver-message _message"> 
-                                                <div></div>
-                                                <div class="_date"></div> 
-                                            </div>
                                         </div>
 
                                     </div>
@@ -124,8 +117,7 @@
                                         <div class="input-group">
                                             <a href="#"><i class="bi bi-emoji-kiss"></i></a>
                                             <input type="text" class="form-control" id="_new-message" 
-                                            placeholder="Scrivi qui il tuo nuovo messaggio..." 
-                                            v-model="newMessage">
+                                            placeholder="Scrivi qui il tuo nuovo messaggio..." >
                                             <a href="#"><i class="bi bi-mic-fill"></i></a>
                                         </div>
                                     </div>
@@ -136,9 +128,8 @@
                         </div>
                     </div>
                 </main>
-
             </div>
         <script src="js/script.js"></script>
-        </body>
-    </div>
+        </div>
+</body>
 </html>
