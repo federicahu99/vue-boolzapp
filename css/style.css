@@ -96,6 +96,12 @@ img {
     line-height: 350%;
     padding: 5px;
     border-bottom: 0.5px solid #c9c3bd;
+    cursor: pointer;
+}
+
+
+._contact:hover {
+    background-color: #eaeaea;
 }
 
 ._contact img {
@@ -168,9 +174,6 @@ img {
 
 /* messages */
 
-#_conversation {
-
-}
 
 ._message {
     padding: 5px 10px;
@@ -189,3 +192,11 @@ img {
 ._receiver-message {
     background-color: white;
 }
+
+._date {
+    font-size: 8px;
+    display: flex;
+    align-items: end;
+}
+
+

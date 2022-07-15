@@ -17,123 +17,125 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <!-- dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
     <title>Boolzapp</title>
     <div id="_bg">
         <body id="_body" class="d-flex justify-content-center">
             <div id="_container">
+                <main>
                
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-5" id="root">
-                        <!-- user section -->
-                        <section id="_user-name-option"  class="d-flex justify-content-between">
-                            <div id="_user-name"  class="d-flex align-items-center">
-                                <img src="img/avatar_io.jpg" alt="mia-foto">
-                                <div id="_nome-user">Federica</div>
-                            </div>
-                            <div id="_user-option">
-                                <i class="bi bi-arrow-counterclockwise"></i>
-                                <i class="bi bi-chat-right-dots"></i>
-                                <i class="bi bi-three-dots-vertical"></i>
-                            </div>
-                        </section>
-
-                        <!-- notifications -->
-                        <section>
-                            <div id="_turn-notifications" class="d-flex align-items-center">
-                                <i class="bi bi-bell-slash"></i>
-                                <div id="_turn-on">
-                                    <div class="fs-8">Ricevi notifiche di nuovi messaggi</div>
-                                    <a href="#" id="_link-setting">Attiva le notifiche</a>
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-5" id="root">
+                            <!-- user section -->
+                            <section id="_user-name-option"  class="d-flex justify-content-between">
+                                <div id="_user-name"  class="d-flex align-items-center">
+                                    <img :src="'img/avatar' + user.avatar +'.jpg'" alt="mia-foto">
+                                    <div id="_nome-user">{{user.name}}</div>
                                 </div>
-                            </div>
-                        </section>
-
-                        <!-- search contact -->
-                        <section>
-                            <div class="input-group" id="_search-container">
-                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca tra contatti e messaggi">
-                            </div>
-                        </section>
-
-                        <!-- open chats -->
-                        <section>
-                            <div id="_conversation-container">
-                                <!-- single contact -->
-                                <div class="_contact d-flex" v-for="(contact, i) in contacts"> 
-                                    <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" alt="">
-                                    <div class="_contact-name" 
-                                        v-text="contact.name"></div>    
-                                    </div>
-                                
-                            </div>
-                        </section>
-
-                    </div>
-
-
-                    <!-- right column -->
-                    <div class="col-7">
-                        <div id="_chat-container">
-                             
-                            <!-- header chat -->
-                            <section id="_chat-header">
-                                <div class="row justify-content-between align-items-center">
-                                    <div class="col" id="_header-icon">
-                                        <img src="img/avatar_01.jpg" alt="">
-                                        <span id="_receiver-name">Christian</span>
-                                    </div>
-                                    <div class="col d-flex justify-content-end" id="_chat-option">
-                                        <i class="bi bi-search"></i>
-                                        <i class="bi bi-link-45deg"></i>
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                    </div>
+                                <div id="_user-option">
+                                    <a href="#"><i class="bi bi-arrow-counterclockwise"></i></a>
+                                    <a href="#"><i class="bi bi-chat-right-dots"></i></a>
+                                    <a href="#"><i class="bi bi-three-dots-vertical"></i></a>
                                 </div>
                             </section>
 
-                            <!-- conversation section -->
+                            <!-- notifications -->
                             <section>
-                                <div id="_conversation">
-
-                                    <!-- mine -->
-                                    <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, voluptatem? Ratione iure, impedit porro incidunt ad nobis velit magnam maxime eum reprehenderit amet in fugit mollitia aut optio eius ipsum.</div> 
+                                <div id="_turn-notifications" class="d-flex align-items-center">
+                                    <i class="bi bi-bell-slash"></i>
+                                    <div id="_turn-on">
+                                        <div class="fs-8">Ricevi notifiche di nuovi messaggi</div>
+                                        <a href="#" id="_link-setting">Attiva le notifiche</a>
                                     </div>
-
-                                    <!-- theirs -->
-                                    <div class="d-flex justify-content-start ps-2"> 
-                                    <div class="_receiver-message _message">okay</div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam fugit, autem vero enim dolorem adipisci explicabo, ipsa minima sapiente totam facilis voluptate maiores perspiciatis iste tenetur quos rerum rem blanditiis. </div> 
-                                    </div>
-
-                                    <div class="d-flex justify-content-end pe-2"> 
-                                        <div class="_user-message _message"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Non possimus cumque assumenda ex! Totam ullam hic assumenda ducimus ab quo harum, neque dolor, voluptatibus aliquid facilis earum, est itaque praesentium! </div> 
-                                    </div>
-
                                 </div>
                             </section>
 
-                            <!-- user chat input -->
+                            <!-- search contact -->
                             <section>
-                                <div id="_user-input">
-                                    <div class="input-group">
-                                        <a href="#"><i class="bi bi-emoji-kiss"></i></a>
-                                        <input type="text" class="form-control" id="_new-message" placeholder="Scrivi qui il tuo nuovo messaggio...">
-                                        <a href="#"><i class="bi bi-mic-fill"></i></a>
-                                      </div>
+                                <div class="input-group" id="_search-container">
+                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+                                    <input type="text" class="form-control" placeholder="Cerca tra contatti e messaggi">
                                 </div>
                             </section>
 
+                            <!-- open chats -->
+                            <section>
+                                <div id="_conversation-container">
+
+                                    <!-- single contact -->
+                                    <div class="_contact d-flex" v-for="(contact, i) in contacts" @click="openChat(contact)"> 
+                                        <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'photo'"> 
+                                        <div class="_contact-name" v-text="contact.name"></div>    
+                                    </div>
+                                    
+                                </div>
+                            </section>
 
                         </div>
-                    </div>
-                </div>
 
+                        <!-- right column -->
+                        <div class="col-7">
+                            <div id="_chat-container">
+                                
+                                <!-- header chat -->
+                                <section id="_chat-header">
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col" id="_header-icon">
+                                            <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" alt="">
+                                            <span id="_receiver-name" v-text="openChatWith.name"> </span>
+                                        </div>
+                                        <div class="col d-flex justify-content-end" id="_chat-option">
+                                            <a href="#"><i class="bi bi-search"></i></a>
+                                            <a href="#"><i class="bi bi-link-45deg"></i></a>
+                                            <a href="#"><i class="bi bi-three-dots-vertical"></i></a>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- conversation section -->
+                                <section>
+                                    <div id="_conversation" v-for="(contact, i) in contacts">
+
+                                        <!-- mine -->
+                                        <div class="d-flex justify-content-end pe-2"> 
+                                            <div class="_user-message _message"> 
+                                                <div v-text></div>
+                                                <div class="_date"></div>
+                                            </div> 
+                                        </div>
+
+                                        <!-- theirs -->
+                                        <div class="d-flex justify-content-start ps-2"> 
+                                            <div class="_receiver-message _message"> 
+                                                <div></div>
+                                                <div class="_date"></div> 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+
+                                <!-- user chat input -->
+                                <section>
+                                    <div id="_user-input">
+                                        <div class="input-group">
+                                            <a href="#"><i class="bi bi-emoji-kiss"></i></a>
+                                            <input type="text" class="form-control" id="_new-message" 
+                                            placeholder="Scrivi qui il tuo nuovo messaggio..." 
+                                            v-model="newMessage">
+                                            <a href="#"><i class="bi bi-mic-fill"></i></a>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
 
             </div>
         <script src="js/script.js"></script>
