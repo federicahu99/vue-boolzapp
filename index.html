@@ -64,9 +64,9 @@
                                 <div id="_conversation-container">
 
                                     <!-- single contact -->
-                                    <div class="_contact d-flex" v-for="(contact, index) in contacts"> 
-                                        <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'photo'" @click="openChat(index)"> 
-                                        <div class="_contact-name" v-text="contact.name"></div>    
+                                    <div class="_contact d-flex"> 
+                                        <img v-bind:src="'img/avatar' + contacts[currentIndex].avatar +'.jpg'" :alt="contact.name + 'photo'" > 
+                                        <div class="_contact-name" v-text="contacts[currentIndex].name"></div>    
                                     </div>
                                     
                                 </div>
@@ -81,9 +81,9 @@
                                 <!-- header chat -->
                                 <section id="_chat-header">
                                     <div class="row justify-content-between align-items-center">
-                                        <div class="col" id="_header-icon">
-                                            <img v-bind:src="'img/avatar' +  +'.jpg'" alt="">
-                                            <span id="_receiver-name"> </span>
+                                        <div class="col" id="_header-icon" v-for="contact[currentIndex] in contacts">
+                                            <img v-bind:src="'img/avatar' + contact.avatar +'.jpg'" alt="">
+                                            <span id="_receiver-name" v-text="contact.name"></span>
                                         </div>
                                         <div class="col d-flex justify-content-end" id="_chat-option">
                                             <a href="#"><i class="bi bi-search"></i></a>
@@ -95,8 +95,7 @@
 
                                 <!-- conversation section -->
                                 <section>
-                                     <div id="_conversation"  
-                                     >
+                                    <div id="_conversation">
 
                                         <!-- message -->
                                         <div class="d-flex"
