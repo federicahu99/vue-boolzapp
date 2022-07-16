@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
     <!-- Style -->    
     <link rel="stylesheet" href="css/style.css">
+    <!-- dayjs -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+    <!-- customParseFormat -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/customParseFormat.js"></script>
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
 
@@ -117,7 +121,7 @@
                                         <div class="input-group">
                                             <a href="#"><i class="bi bi-emoji-kiss"></i></a>
                                             <input type="text" class="form-control" id="_new-message" 
-                                            placeholder="Scrivi qui il tuo nuovo messaggio..." >
+                                            placeholder="Scrivi qui il tuo nuovo messaggio..." v-model="textMessage"  @keyup.enter="send(textMessage, [currentIndex])">
                                             <a href="#"><i class="bi bi-mic-fill"></i></a>
                                         </div>
                                     </div>

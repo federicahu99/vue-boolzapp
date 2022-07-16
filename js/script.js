@@ -3,6 +3,7 @@ console.log('ok', Vue)
 const root = new Vue ({
     el: "#root",
     data : {
+      textMessage: '',
       currentIndex: 0,
       user: {
         name: 'Nome Utente',
@@ -94,7 +95,22 @@ const root = new Vue ({
     }, methods: {
       openChat(index) {
         this.currentIndex = index;
+      },
+      send(textMessage, i) {
+        //date
+        dayjs.extend(dayjs_plugin_customParseFormat)
+        
+        //message
+        newMessage = [{
+        date: dayjs('2019-01-25 00:00:02').format('DD/MM/YYYY HH:mm:ss'),
+        text: textMessage,
+        status: 'sent'
+        }],
+        this.contacts[i].messages.push('newMessage'),
+        this.textMessage='';
       }
-       
+      
     }
 })
+
+
