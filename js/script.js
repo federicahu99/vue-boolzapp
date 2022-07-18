@@ -5,6 +5,7 @@ const root = new Vue ({
     data : {
       textMessage: '',
       currentIndex: 0,
+      searchByLetters:'',
       user: {
         name: 'Nome Utente',
         avatar: '_io'
@@ -91,23 +92,39 @@ const root = new Vue ({
       },
       ]
         
+    }, computed: {
+      filteredContacts(){
+        const searchText= this.searchByLetters.toLowerCase();
+        const filteredContacts = this.contacts.map((contact)=>{
+        if(contact.name.toLowerCase().includes(searchText)) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        } 
+
+        // OPPURE: contact.visible = contact.name.toLowerCase().includes(searchText)
+        });
+      }
+
 
     }, methods: {
       openChat(index) {
         this.currentIndex = index;
       },
 
-      send(textMessage, i) { //invio il testo all'interno dell'input
-        //date
-        dayjs.extend(dayjs_plugin_customParseFormat)
-        newMessage = { //message
+      send() { //invio il testo all'interno dell'input
+        if(!this.textMessage) {
+          return
+        }
+        dayjs.extend(dayjs_plugin_customParseFormat)  //date
+        newMessage = { //nuovo oggetto per array 
         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-        text: textMessage,
+        text: this.textMessage,
         status: 'sent'
         },
         this.contacts[this.currentIndex].messages.push(newMessage),
-        this.textMessage='';
-        this.sendResponse()
+        this.textMessage=''; //svuoto
+        this.sendResponse() //timer risposta automatica
       },
 
       sendResponse() { // risposta automatica dopo 1 secondo
@@ -120,7 +137,6 @@ const root = new Vue ({
         this.contacts[this.currentIndex].messages.push(newResponse)
       }, 1000)
     }, 
-
       
     }
   })
