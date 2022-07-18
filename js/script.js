@@ -101,16 +101,25 @@ const root = new Vue ({
         dayjs.extend(dayjs_plugin_customParseFormat)
         
         //message
-        newMessage = [{
-        date: dayjs('2019-01-25 00:00:02').format('DD/MM/YYYY HH:mm:ss'),
+        newMessage = {
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: textMessage,
         status: 'sent'
-        }],
-        this.contacts[i].messages.push('newMessage'),
+        },
+        this.contacts[this.currentIndex].messages.push(newMessage),
         this.textMessage='';
+      },
+      generateResponse(){
+        //date
+        dayjs.extend(dayjs_plugin_customParseFormat),
+        
+          //message
+        response = [{
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          text: 'ok',
+          status: 'received'
+        }],
+          this.contacts[i].messages.push('newMessage');
       }
-      
     }
-})
-
-
+  })
