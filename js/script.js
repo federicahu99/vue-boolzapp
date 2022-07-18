@@ -96,30 +96,31 @@ const root = new Vue ({
       openChat(index) {
         this.currentIndex = index;
       },
-      send(textMessage, i) {
+
+      send(textMessage, i) { //invio il testo all'interno dell'input
         //date
         dayjs.extend(dayjs_plugin_customParseFormat)
-        
-        //message
-        newMessage = {
+        newMessage = { //message
         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: textMessage,
         status: 'sent'
         },
         this.contacts[this.currentIndex].messages.push(newMessage),
         this.textMessage='';
+        this.sendResponse()
       },
-      generateResponse(){
-        //date
-        dayjs.extend(dayjs_plugin_customParseFormat),
-        
-          //message
-        response = [{
-          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-          text: 'ok',
-          status: 'received'
-        }],
-          this.contacts[i].messages.push('newMessage');
-      }
+
+      sendResponse() { // risposta automatica dopo 1 secondo
+        setTimeout(() => {
+        const newResponse= {
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        text: 'ok',
+        status: 'received'
+        };
+        this.contacts[this.currentIndex].messages.push(newResponse)
+      }, 1000)
+    }, 
+
+      
     }
   })
