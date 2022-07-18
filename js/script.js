@@ -95,15 +95,18 @@ const root = new Vue ({
     }, computed: {
       filteredContacts(){
         const searchText= this.searchByLetters.toLowerCase();
-        const filteredContacts = this.contacts.map((contact)=>{
-        if(contact.name.toLowerCase().includes(searchText)) {
-          contact.visible = true;
-        } else {
-          contact.visible = false;
-        } 
-
+        const filtered = this.contacts.map((contact)=>{
+            if(contact.name.toLowerCase().includes(searchText)) {
+              contact.visible = true;
+            } else {
+              contact.visible = false;
+            } 
+            return contact;
+           
         // OPPURE: contact.visible = contact.name.toLowerCase().includes(searchText)
+          
         });
+        return filtered;
       }
 
 
